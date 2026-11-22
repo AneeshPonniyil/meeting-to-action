@@ -1,0 +1,12 @@
+Architecture Discussion: Service Migration
+Attendees: Tech team
+
+- Discussed migrating the notification service to a serverless architecture
+- Agreed that the current message queue is incurring excessive latency
+- Need to update the database connection strings across all microservices
+- Action item: benchmark throughput between Kafka and SQS (no owner assigned)
+- Someone needs to review the IAM permissions before deployment
+- Decided to hold off on multi-region failover until budget approval
+- Major blocker: production logging pipeline is crashing intermittently under load
+- Critical bug reported in checkout token generation, must be resolved immediately
+- Next steps: schedule follow-up sync sometime next month

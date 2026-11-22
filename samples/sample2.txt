@@ -1,0 +1,13 @@
+Mobile App v2 Launch Readiness Sync
+Attendees: Elena (Product), Dave (Marketing), Carlos (Operations), Ananya (Support)
+
+- Elena reviewed the launch countdown checklist: launch date confirmed for 18 Dec
+- Agreed to freeze new feature requests and allow only critical bug fixes
+- Decided to sunset support for iOS versions below 15.0 starting next release
+- Dave will finalize promotional email campaigns and social media graphics by Friday
+- Elena to deliver the final release notes and app store screenshots by Wednesday
+- Carlos to coordinate with the cloud team for traffic autoscaling by 12 Dec
+- Ananya will prepare customer support FAQs and train the tier-1 support desk by Thursday
+- Blocker: third-party push notification provider has scheduled maintenance on launch day
+- Dave agreed to evaluate fallback push providers by Monday
+- Next week the team will run a mock launch drill with real devices

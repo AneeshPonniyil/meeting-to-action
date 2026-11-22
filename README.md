@@ -1,49 +1,96 @@
-# Agent Template Pack: Weekly Status Report Agent
+# Meeting to Action Items Agent
 
-The starter for **Zero to Live AI Agent on Cloud** (Future Proof India).
+A powerful, self-verifying AI Agent built with **Streamlit** that transforms unstructured meeting notes, Zoom/Teams transcripts, and discussion scratchpads into clear meeting minutes, decisions, and tracked action items.
 
-A delivery manager pastes a week of rough team notes (stand-ups, Jira lines, emails). The agent sorts every note, gives an overall Red / Amber / Green status, builds a risk and blocker register with owners and dates, checks its own work against three checks, fixes it, and lists the questions to ask the team. You will change it into your own agent on Day 2 and put it online on Day 3. It runs straight away in **demo mode**, with no AI key.
+Works out of the box in **Demo Mode** (using rule-based heuristics, no API key needed). Add your AI provider API key to switch to an intelligent LLM (OpenAI, Google Gemini, DeepSeek).
 
-## Day 2: run it on your computer
+---
 
-1. **Copy this project.** Click the green **Use this template** button at the top right of this page, then **Create a new repository**. Name it `my-agent`, keep it **Public**, and click **Create repository**.
-2. **Download it.** On your new repository, click the green **Code** button, then **Download ZIP**. Unzip it into a folder on your computer.
-3. **Open the folder in the Antigravity app** (the desktop app, not the Antigravity IDE) and paste the prompt from the Studio step. It installs what the project needs and starts it. If you prefer to type the commands yourself, run these in a terminal inside the folder:
+## What the Agent Does
 
+1. **Extracts Action Items & Ownership:**
+   - **Task description:** Actionable, verb-first task.
+   - **Assignee / Owner:** Person responsible.
+   - **Deadline / Due Date:** Target date or timeframe.
+   - **Priority:** `High`, `Medium`, or `Low`.
+   - **Category:** `Engineering`, `Product`, `Design`, `QA`, `Operations`, or `Follow-up`.
+   - **Deliverable:** Clear definition of done.
+2. **Captures Key Decisions:** Logs agreements made by the team so alignment is preserved.
+3. **Drafts Follow-Up Email:** Ready-to-copy email/Slack message for meeting participants.
+4. **Self-Verification & Anti-Hallucination:**
+   - Checks that all extracted details are strictly grounded in the meeting notes.
+   - Highlights unassigned tasks or missing deadlines and formulates clarification questions.
+   - Re-prompts the model to self-correct any detected issues before presenting.
+5. **Multi-Format Export:** Download meeting minutes in **Markdown** (`.md`) or action items in **CSV** (`.csv`) for Jira, Linear, or Excel.
+
+---
+
+## Quickstart
+
+### 1. Install Dependencies
+```bash
+python -m pip install -r requirements.txt
+```
+
+### 2. Run the App
+```bash
+python -m streamlit run app.py
+```
+Open **`http://localhost:8501`** in your web browser.
+
+---
+
+## Using a Real AI Model (Optional)
+
+1. Copy `.streamlit/secrets.toml.example` to `.streamlit/secrets.toml`:
+   ```bash
+   cp .streamlit/secrets.toml.example .streamlit/secrets.toml
    ```
-   python -m pip install -r requirements.txt
-   python -m streamlit run app.py
+2. Configure your provider API key:
+
+   **OpenAI:**
+   ```toml
+   AI_API_KEY = "sk-..."
+   AI_BASE_URL = "https://api.openai.com/v1"
+   AI_MODEL = "gpt-4o-mini"
    ```
 
-4. **Open the address it prints** (it starts with `localhost`). Press **Load a sample week**, then **Write my report**.
+   **Google Gemini (Free tier available):**
+   ```toml
+   AI_API_KEY = "your-gemini-api-key"
+   AI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/openai/"
+   AI_MODEL = "gemini-2.5-flash"
+   ```
 
-### Use a real AI model
+   **DeepSeek:**
+   ```toml
+   AI_API_KEY = "your-deepseek-api-key"
+   AI_BASE_URL = "https://api.deepseek.com"
+   AI_MODEL = "deepseek-chat"
+   ```
 
-1. Get a key from an AI provider (Google Gemini has a free tier).
-2. Copy `.streamlit/secrets.toml.example` to a new file `.streamlit/secrets.toml`. Paste your key and your provider's two lines into it.
-3. Restart the project. The green box now says it is using a real model.
+3. Restart the Streamlit app. The badge at the top will indicate that a real AI model is active.
 
-`.streamlit/secrets.toml` stays on your computer. It is ignored by Git, and you must never upload it to GitHub.
+---
 
-### Make it yours
+## Project Structure
 
-| File | What it is | What you do |
-|---|---|---|
-| `prompts.py` | the agent's job description | rewrite it in your own words |
-| `app.py` | the screen people see | improve it |
-| `sample_updates.txt` | a sample week of notes | replace with your own samples |
-| `agent.py` | the agent's steps: sort, check, fix, ask | change only if you want new steps |
-| `demo.py` | simple rules used in demo mode | you can ignore this |
+| File | Purpose |
+|---|---|
+| `app.py` | Streamlit web interface with interactive tables, badges, metrics, and download controls. |
+| `agent.py` | Agent logic: planning, extraction, 3-step self-reflection checks, self-correction, markdown & CSV exports. |
+| `prompts.py` | Agent system prompt and operational boundaries (Who You Are, What You Always Do, What You Never Do). |
+| `demo.py` | Offline heuristic engine for demo mode (pattern matching for tasks, owners, dates, and priorities). |
+| `sample_updates.txt` | Default sample meeting notes (Sprint Planning & Architecture Sync). |
+| `samples/` | Realistic meeting transcripts across Product, SRE Incident Retrospective, Cloud, and Banking. |
+| `requirements.txt` | Minimal dependencies: `streamlit`, `openai`, `pandas`. |
 
-## Day 3: put it online
+---
 
-1. **Upload to GitHub, in your browser.** Open your repository, click **Add file**, then **Upload files**, drag in your project files and click **Commit changes**. Do **not** upload `.streamlit/secrets.toml`.
-2. **Deploy.** Go to [share.streamlit.io](https://share.streamlit.io) and sign in with GitHub. Click **Create app**, choose **Deploy a public app from GitHub**, pick your repository and leave the main file as `app.py`.
-3. **Add your key safely.** Open **Advanced settings**, and in **Secrets** paste the same three lines you put in `.streamlit/secrets.toml`. Click **Deploy**.
-4. **Open your link.** It ends in `streamlit.app`.
+## Deploying to Streamlit Community Cloud
 
-To change something later, open the file on GitHub, click the pencil, edit and press **Commit changes**. Your live app updates by itself.
-
-## If something fails
-
-Open your app and click **Manage app** at the bottom right, then read the last lines of the log. Paste them into your AI assistant and ask: "What is wrong, in plain words, and what exact change should I make?"
+1. Push this repository to GitHub (ensure `.streamlit/secrets.toml` is **not** committed).
+2. Go to [share.streamlit.io](https://share.streamlit.io) and create a new app.
+3. Select your repository and set the main file path to `app.py`.
+4. In **Advanced Settings -> Secrets**, paste the contents of your `.streamlit/secrets.toml`.
+5. Click **Deploy**.

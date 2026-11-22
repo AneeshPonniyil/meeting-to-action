@@ -1,0 +1,4 @@
+Standup quick check:
+- Agreed to approve the vendor contract for cloud storage today.
+- Vikram will deploy security patch KB-4491 to staging by 4 PM.
+- Blocker: waiting on VPN approval for contractor access.

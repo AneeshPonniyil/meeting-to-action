@@ -1,0 +1,12 @@
+Sprint 24 Sync: Customer Portal Redesign
+Attendees: Sarah (Lead), Arjun (Backend), Maya (Frontend), Liam (QA)
+
+- Sarah opened the call to finalize deliverables for Sprint 24
+- Decided to proceed with Option B for the single-page checkout flow
+- Agreed that payment gateway tokenization is mandatory before beta launch
+- Arjun to complete the Stripe webhook integration (PORTAL-204) by Wednesday
+- Maya will deliver the responsive payment form components by Friday
+- Liam to write automated test scenarios for 3D Secure card validation by Thursday
+- Blocker: waiting on merchant sandbox API credentials from the payment partner
+- Sarah to escalate the partner credential delay to management by Tuesday EOD
+- Next week we will conduct internal user acceptance testing on staging

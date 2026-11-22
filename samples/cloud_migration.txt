@@ -1,10 +1,12 @@
-Mon: Kavya moved 14 of 20 internal apps to AWS, the remaining 6 need database changes first
-Mon: the old data centre contract ends on 31 Jan, finance asked for a firm cut-over date
-Tue: load test on the HR portal passed, response time down from 4 seconds to 1.2 seconds
-Tue: waiting for the security team to approve the new firewall rules, Imran chasing
-Wed: the payroll app failed in staging because of an old Java version, Deepak investigating
-Wed: cloud bill for November came in 18% above the estimate, nobody owns the cost review yet
-Thu: Sunita finished the backup and restore runbook, reviewed by the operations team
-Thu: two engineers on leave next week, may slow down the last 6 apps
-Fri: next week we plan the payroll cut-over and a dry run on Saturday
-Fri: still no decision from the client on whether the reporting database moves in phase 1 or phase 2
+Executive Steering Committee: Cloud Migration & Security
+Date: Tuesday, 19 Nov | Attendees: Robert (VP Eng), Aisha (Security Lead), Vikram (Cloud Architect)
+
+- Robert opened with executive updates: Cloud migration is at 75% completion across Tier 1 workloads.
+- Decided to mandate mutual TLS (mTLS) for all cross-cluster service communications by end of month.
+- Aisha to finalize the IAM least-privilege audit report by Friday.
+- Vikram will deploy the Kubernetes ingress controller security patch across EU and US clusters by Wednesday.
+- Aisha raised that automated penetration testing detected 2 medium vulnerabilities in the legacy proxy.
+- Vikram agreed to isolate the legacy proxy in a restricted VPC subnet by Thursday EOD.
+- Action Item: Robert to present cloud budget forecast to the CFO by next Monday.
+- Agreed to deprecate self-hosted Redis instances in favor of managed AWS ElastiCache.
+- Open question: When will the network operations team approve the Direct Connect circuit failover test?

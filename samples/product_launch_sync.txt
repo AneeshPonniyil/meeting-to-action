@@ -1,0 +1,13 @@
+Product Launch & Go-To-Market Alignment
+Date: Wednesday, 20 Nov | Attendees: Elena (Product), Tom (Marketing), Carlos (Sales Lead), Maya (Customer Success)
+
+- Elena reviewed the launch timeline for Mobile App v3.0: Launch date is locked for 15 Dec.
+- Decided that feature freeze is strictly next Monday, with only P0 bug fixes accepted afterwards.
+- Tom will finalize the email marketing campaign copy and landing page assets by Friday.
+- Elena to send the final product feature list and release notes to Carlos by Thursday.
+- Carlos will brief the enterprise sales team on updated pricing tiers by next Tuesday.
+- Maya raised that customer support needs training on the new analytics dashboard before public rollout.
+- Maya to schedule two support enablement webinars by 5 Dec.
+- Action Item: Tom to coordinate with the paid ads agency for Google Search campaigns starting 10 Dec.
+- Agreed to exclude the beta AI chat assistant from the initial v3.0 release to avoid launch delays.
+- Open question: Do we have customer success coverage scheduled for the weekend of the 15 Dec launch?

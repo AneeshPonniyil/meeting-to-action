@@ -1,0 +1,11 @@
+Incident Retrospective: P1 Checkout Outage (INC-892)
+Date: Friday, 22 Nov | Attendees: Dave (Incident Commander), Ravi (Infra), Meera (Backend Lead), Ananya (SRE)
+
+- Dave summarized the timeline: Checkout service was degraded for 47 minutes on Thursday due to connection pool exhaustion.
+- Decided to increase max database connections from 200 to 500 across all production API pods immediately.
+- Ravi to configure automated alerts for connection pool utilization above 80% by Monday.
+- Meera will implement connection retry backoff logic in the order service by Wednesday.
+- Ananya is taking ownership of running a chaos engineering simulation in staging by next Friday to validate resilience.
+- Decided that all database schema migrations must undergo peer architectural review before execution.
+- Action Item: Dave to draft the formal customer-facing post-mortem incident report by Tuesday EOD.
+- Open question: Who will audit third-party microservice timeouts to prevent cascading worker thread locks?

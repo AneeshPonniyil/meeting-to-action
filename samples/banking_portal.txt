@@ -1,10 +1,11 @@
-Mon: Priya finished the login screen for the customer portal (PORTAL-142), testing started
-Mon: Arjun spent two hours helping the support team with a billing question from Acme Bank
-Tue: released version 2.3 to the test environment, 41 of 43 regression tests passed
-Tue: waiting on approval from the security team before we can go live, Meera to follow up
-Wed: the vendor may slip the payment gateway delivery by a week, could affect the 15 Dec launch
-Wed: client call with Acme Bank went well, they praised the new dashboard
-Thu: Ravi stuck on a database timeout in PORTAL-150, cannot reproduce it on his machine
-Thu: fixed three small bugs reported by the testers (PORTAL-138, 139, 141)
-Fri: next week we start the reports module and prepare the client demo for Thursday
-Fri: no access to the production logs yet, request raised with IT
+Client Kickoff & Architecture Review: Banking Portal Modernization
+Date: Monday, 18 Nov | Attendees: Vikram (Solution Architect), Sunita (Project Manager), Mark (Client Director, Acme Bank)
+
+- Sunita opened the kickoff session: Project objective is modernizing Acme Bank's corporate banking portal.
+- Decided that multi-factor authentication (MFA) via hardware tokens and biometric push is required for MVP.
+- Vikram to deliver the high-level system architecture document and sequence diagrams by Thursday.
+- Sunita will prepare the project RACI matrix and weekly status reporting cadence by Friday.
+- Mark will provide API sandbox credentials and test account data for the core banking system by Wednesday.
+- Agreed to hold bi-weekly sprint demos every alternate Thursday at 3 PM.
+- Action Item: Vikram to schedule security review with Acme Bank info-security compliance team by next Tuesday.
+- Open question: What are the client's data residency constraints regarding cross-region backup replication?

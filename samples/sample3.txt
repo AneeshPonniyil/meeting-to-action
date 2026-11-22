@@ -1,0 +1,10 @@
+quick eng sync notes - rough
+sarah arjun liam on call
+- talkd about db slowdown... arjun said queries timing out on prod replica
+- decidd: bump connection pool to 400 asap and restart pods
+- arjun to check slow query logs by tues eod (need to optimize index on users tbl)
+- liam will rerun load test aftr pool change... target thursday mrning
+- sarah said agreed to delay search v2 until sprint 26
+- blocked on devops: no ssh acces to staging box for liam... @marcus pls grant access
+- figma links broken in ticket 304, maya to fix link by tmrw
+- next wk: prep demo for client
